@@ -1,3 +1,87 @@
+//{
+//  "root": true,
+//  "extends": [
+//    "eslint:recommended",
+//    "plugin:@typescript-eslint/recommended",
+//    "next/core-web-vitals"
+//  ],
+//  "parser": "@typescript-eslint/parser",
+//  "parserOptions": { "project": ["./tsconfig.json"] },
+//  "plugins": [
+//    "@typescript-eslint"
+//  ],
+//  "rules": {
+//    "@typescript-eslint/strict-boolean-expressions": [
+//      2,
+//      {
+//        "allowString" : false,
+//        "allowNumber" : false
+//      }
+//    ]
+//  },
+//  "ignorePatterns": ["src/**/*.test.ts", "src/frontend/generated/*"]
+//}
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "next/core-web-vitals"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "import"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "globals": {
+    "DEBUG": false,
+    "TEST": false,
+    "VERSION": false
+  },
+  "rules": {
+    "import/prefer-default-export": "off",
+    "import/no-unresolved": "off",
+    "import/no-duplicates": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/extensions": [
+      "error",
+      {
+        "ts": "never",
+        "json": "always"
+      }
+    ],
+    "comma-dangle": ["error", "never"],
+    "function-paren-newline": ["error", "consistent"],
+    "object-curly-spacing": [1, "never"],
+    "array-bracket-spacing": [1, "never"],
+    "max-len": ["error", 120, 2, {
+      "ignoreUrls": true,
+      "ignoreComments": false,
+      "ignoreRegExpLiterals": true,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true
+    }],
+    "indent": ["error", 4, {"SwitchCase": 1}],
+    "no-shadow": "off",
+
+    "react/prop-types": "off",
+    "react/jsx-indent": ["error", 4],
+    "react/jsx-indent-props": ["error", 4],
+    "react/require-default-props": "off",
+    "react/jsx-filename-extension": [1, {
+      "extensions": [".ts", ".tsx"]
+    }],
+    "@typescript-eslint/member-delimiter-style": "off",
+    "@typescript-eslint/no-var-requires": "off"
+  }
 }
